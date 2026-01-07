@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIX Copiado</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.box{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+h2{
+  color:#2e7d32;
+}
+button{
+  margin-top:15px;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:#2e7d32;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+button:hover{
+  background:#256428;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>PIX copiado com sucesso ✅</h2>
+  <p>CNPJ:</p>
+  <strong id="pix">54.823.499/0001-66</strong><br>
+
+  <button onclick="copiar()">Copiar novamente</button>
+</div>
+
+<script>
+function copiar(){
+  navigator.clipboard.writeText("54.823.499/0001-66");
+}
+
+window.onload = copiar;
+</script>
+
+</body>
+</html>
