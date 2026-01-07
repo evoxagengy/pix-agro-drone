@@ -18,7 +18,7 @@ body{
 
 .box{
   background:#fff;
-  padding:22px 24px 24px 24px;
+  padding:16px 22px 22px 22px; /* reduz topo */
   border-radius:14px;
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,.15);
@@ -26,27 +26,31 @@ body{
   width:100%;
 }
 
+/* LOGO BEM PRÓXIMA */
 .logo{
   max-width:210px;
-  margin-bottom:6px;
+  margin:0; /* remove espaço */
 }
 
+/* TÍTULO COLADO NA LOGO */
 h2{
   color:#2e7d32;
-  margin:6px 0 8px 0;
-  font-size:20px;
+  margin:2px 0 6px 0;
+  font-size:19px;
 }
 
+/* TEXTO */
 p{
-  margin:6px 0 4px 0;
+  margin:4px 0 2px 0;
 }
 
 strong{
   font-size:16px;
 }
 
+/* BOTÃO */
 button{
-  margin-top:16px;
+  margin-top:14px;
   padding:14px 20px;
   border:none;
   border-radius:10px;
@@ -62,8 +66,8 @@ button:hover{
 }
 
 .status{
-  margin-top:10px;
-  font-size:13px;
+  margin-top:8px;
+  font-size:12px;
   color:#666;
 }
 </style>
@@ -73,17 +77,16 @@ button:hover{
 
 <div class="box">
 
-  <!-- LOGO -->
   <img src="logo.png" alt="Logo Agro Drone" class="logo">
 
-  <h2 id="titulo">Copiando chave PIX…</h2>
+  <h2 id="titulo">Toque no botão para copiar ⚠️</h2>
 
   <p>CNPJ:</p>
   <strong id="pix">54.823.499/0001-66</strong>
 
   <button onclick="copiar()">Copiar Chave Pix</button>
 
-  <div class="status" id="status"></div>
+  <div class="status" id="status">Seu navegador bloqueou a cópia automática.</div>
 
 </div>
 
@@ -100,7 +103,6 @@ function copiar(){
   });
 }
 
-// tenta copiar automaticamente ao abrir
 window.onload = copiar;
 </script>
 
