@@ -26,8 +26,8 @@ h2{
   color:#2e7d32;
 }
 button{
-  margin-top:15px;
-  padding:12px 20px;
+  margin-top:18px;
+  padding:12px 22px;
   border:none;
   border-radius:8px;
   background:#2e7d32;
@@ -38,24 +38,39 @@ button{
 button:hover{
   background:#256428;
 }
+.status{
+  margin-top:12px;
+  font-size:14px;
+  color:#555;
+}
 </style>
 </head>
 
 <body>
 
 <div class="box">
-  <h2>PIX copiado com sucesso ✅</h2>
+  <h2 id="titulo">Copiando chave PIX…</h2>
   <p>CNPJ:</p>
   <strong id="pix">54.823.499/0001-66</strong><br>
 
   <button onclick="copiar()">Copiar Chave Pix</button>
+  <div class="status" id="status"></div>
 </div>
 
 <script>
+const chavePix = "54.823.499/0001-66";
+
 function copiar(){
-  navigator.clipboard.writeText("54.823.499/0001-66");
+  navigator.clipboard.writeText(chavePix).then(() => {
+    document.getElementById("titulo").innerText = "PIX copiado com sucesso ✅";
+    document.getElementById("status").innerText = "Agora é só colar no app do banco.";
+  }).catch(() => {
+    document.getElementById("titulo").innerText = "Toque no botão para copiar ⚠️";
+    document.getElementById("status").innerText = "Seu navegador bloqueou a cópia automática.";
+  });
 }
 
+// tenta copiar automaticamente ao abrir a página
 window.onload = copiar;
 </script>
 
